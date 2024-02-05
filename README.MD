@@ -36,5 +36,16 @@
   - match: RegExp, creates a validator that checks if the value matches the given RegExp
   - unique: true. creates a unique index
     - if you try to save a user, but there is already a email in use, duplicate error message will be shown
+- setup register router in auth controller
+  - validate if user provided correct values using mongoose else send back nice error response
+  - hash password
+    - just in case someone breaks into database
+    - never store user passwords as strings
+    - hashing them generates random bites and combines them with password
+    - hashing cannot be reversed, really good for storing password
+    - library bcryptjs
+  - create token that will be associated with that user
+  - send response with token
+  - with that token user can create resources
 
 [Back to Top](#custom_anchor_name)
