@@ -29,6 +29,7 @@
 ### _notes_
 
 - setup controllers, the functions for our routes
+- setup routers, for jobs and auth
 -
 
 [Back to Top](#custom_anchor_name)
