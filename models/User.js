@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -24,6 +25,7 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
+//using function keyword will let us use this keyword, pointing to each document
 //mongoose middleware
 //this,.. points to our document to be created,
 //before we save each document to the DB, what do we want to accomplish
@@ -33,5 +35,17 @@ UserSchema.pre('save', async function () {
   this.password = await bcrypt.hash(this.password, salt);
   //passed onto next middleware automatically
 });
+
+//schema instance methods
+//create token, with data we want to send back and expiration
+UserSchema.methods.createJWT = function () {
+  return jwt.sign(
+    { userId: this._id, name: this.name },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: process.env.JWT_LIFETIME,
+    }
+  );
+};
 
 module.exports = mongoose.model('User', UserSchema);
