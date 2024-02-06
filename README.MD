@@ -42,8 +42,14 @@
     - just in case someone breaks into database
     - never store user passwords as strings
     - hashing them generates random bites and combines them with password
-    - hashing cannot be reversed, really good for storing password
+    - hashing cannot be reversed, really good for storing passwords
     - library bcryptjs
+      - require in controllers
+      - generate salt, generate random bites > bcrypt.genSalt(10)
+        - 10, how many random bites to get, bigger the number the more random bites, more secure
+        - more rounds also means more processing power
+      - bcrypt.hash(password, salt)
+    - use mongoose pre save middleware for cleaner code
   - create token that will be associated with that user
   - send response with token
   - with that token user can create resources

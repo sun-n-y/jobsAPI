@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -20,8 +21,17 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'please provide password'],
     minLength: 6,
-    maxLength: 12,
   },
+});
+
+//mongoose middleware
+//this,.. points to our document to be created,
+//before we save each document to the DB, what do we want to accomplish
+UserSchema.pre('save', async function () {
+  //hash password
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  //passed onto next middleware automatically
 });
 
 module.exports = mongoose.model('User', UserSchema);
