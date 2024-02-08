@@ -65,6 +65,11 @@
       - cleaner controller as a result
   - with that token user can create resources and future and make requests successfully
 - login functionality
+  - check wether we are getting email and password with some kind of values, because that is the whole setup for logging in
+    - if not then bad request
+  - check for user in our database, with UserModel.findOne()
+    - if we find one then we send back user and token
+    - if not then we send back another error
   - since we are using library to hash password we want to compare it as well
   -
 
