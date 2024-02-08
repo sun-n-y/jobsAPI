@@ -37,6 +37,7 @@ UserSchema.pre('save', async function () {
 });
 
 //schema instance methods
+
 //create token, with data we want to send back and expiration
 UserSchema.methods.createJWT = function () {
   return jwt.sign(
@@ -46,6 +47,12 @@ UserSchema.methods.createJWT = function () {
       expiresIn: process.env.JWT_LIFETIME,
     }
   );
+};
+
+//check user entered password against hashed password in document in the database
+UserSchema.methods.checkPassword = async function (userPassword) {
+  const isMatch = await bcrypt.compare(userPassword, this.password);
+  return isMatch;
 };
 
 module.exports = mongoose.model('User', UserSchema);

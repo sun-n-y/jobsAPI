@@ -71,6 +71,9 @@
     - if we find one then we send back user and token
     - if not then we send back another error
   - since we are using library to hash password we want to compare it as well
-  -
+    - bcrypt compare, compares hashed password
+    - then send back token, because suer has successfully logged in
+    - set up in instances instead of jamming everything in controller
+    -
 
 [Back to Top](#custom_anchor_name)
