@@ -1,4 +1,4 @@
-const { BadRequestError } = require('../errors');
+const { BadRequestError, UnauthenticatedError } = require('../errors');
 const UserModel = require('../models/User');
 const { StatusCodes } = require('http-status-codes');
 
@@ -18,6 +18,12 @@ const login = async (req, res) => {
   }
 
   const user = await UserModel.findOne({ email });
+  //compare password
+  if (!user) {
+    throw new UnauthenticatedError('invalid credentials');
+  }
+  const token = user.createJWT();
+  res.status(StatusCodes.OK).json({ user: { name: user.name }, token });
 };
 
 module.exports = { register, login };
