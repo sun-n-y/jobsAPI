@@ -1,3 +1,4 @@
+const { BadRequestError } = require('../errors');
 const UserModel = require('../models/User');
 const { StatusCodes } = require('http-status-codes');
 
@@ -11,7 +12,12 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  res.send('login user');
+  const { email, password } = req.body;
+  if (!email || !password) {
+    throw new BadRequestError('please provide email and password');
+  }
+
+  const user = await UserModel.findOne({ email });
 };
 
 module.exports = { register, login };

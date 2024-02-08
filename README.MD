@@ -64,5 +64,8 @@
       - so we'll create a function that generates that token
       - cleaner controller as a result
   - with that token user can create resources and future and make requests successfully
+- login functionality
+  - since we are using library to hash password we want to compare it as well
+  -
 
 [Back to Top](#custom_anchor_name)
