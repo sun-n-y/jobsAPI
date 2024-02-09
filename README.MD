@@ -74,6 +74,7 @@
     - bcrypt compare, compares hashed password
     - then send back token, because suer has successfully logged in
     - set up in instances instead of jamming everything in controller
-    -
+- auth middleware
+  - two different ways,
 
 [Back to Top](#custom_anchor_name)
