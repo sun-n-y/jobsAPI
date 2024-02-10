@@ -76,5 +76,8 @@
     - set up in instances instead of jamming everything in controller
 - auth middleware
   - two different ways,
-
-[Back to Top](#custom_anchor_name)
+- job model
+  - for created by, we are now tying job model with user model
+  - every time we create a job, we will assign it to one of the users
+  - timestamps true
+    - [Back to Top](#custom_anchor_name)
