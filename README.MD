@@ -75,19 +75,16 @@
     - then send back token, because suer has successfully logged in
     - set up in instances instead of jamming everything in controller
 - auth middleware
-  - two different ways,
+  - where we can verify token, if correct, pass userId to pass along job routes
 - job model
   - for created by, we are now tying job model with user model
   - every time we create a job, we will assign it to one of the users
   - timestamps true
     - a mongoose schema timestamp option, that tells mongoose to automatically manage created at and updated at properties on documents, so no manual setup
 - job controller
-
   - create job
-
     - check to see if correct info is being sent to the controller
     - import model, create new one
     - now jobs will be tied to specific user
-    -
 
-    - [Back to Top](#custom_anchor_name)
+[Back to Top](#custom_anchor_name)

@@ -3,7 +3,7 @@ const UserModel = require('../models/User');
 const { StatusCodes } = require('http-status-codes');
 
 const register = async (req, res) => {
-  //using mongoose middleware pre, to has password
+  //using mongoose middleware pre, to hash password
   //mongoose does the validation
   const user = await UserModel.create({ ...req.body });
   //create token, using schema instance
