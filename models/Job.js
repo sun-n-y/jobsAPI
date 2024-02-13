@@ -19,8 +19,9 @@ const JobSchema = new mongoose.Schema(
       default: 'pending',
     },
     createdBy: {
-      //tie job model to user model, with object ID
+      //tie job model to user model, with object ID from user model
       type: mongoose.Types.ObjectId,
+      //which model to reference
       ref: 'User',
       required: [true, 'please provide user'],
     },

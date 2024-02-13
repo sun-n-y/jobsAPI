@@ -11,9 +11,8 @@ const getJob = async (req, res) => {
 };
 
 const createJob = async (req, res) => {
-  console.log(req.body.createdBy);
+  //add user obtained from prev middleware to req body here to build relationship
   req.body.createdBy = req.user.userId;
-  console.log(req.body.createdBy);
   const job = await JobModel.create(req.body);
   res.status(StatusCodes.CREATED).json({ job });
 };

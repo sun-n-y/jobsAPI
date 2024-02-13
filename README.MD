@@ -76,6 +76,8 @@
     - set up in instances instead of jamming everything in controller
 - auth middleware
   - where we can verify token, if correct, pass userId to pass along job routes
+  - that way, jobs routes are protected to unique valid user
+  - so, you will only deal with resources associated with that user
 - job model
   - for created by, we are now tying job model with user model
   - every time we create a job, we will assign it to one of the users
@@ -84,7 +86,7 @@
 - job controller
   - create job
     - check to see if correct info is being sent to the controller
-    - import model, create new one
+    - import model, create new doc on mongodb
     - now jobs will be tied to specific user
 
 [Back to Top](#custom_anchor_name)

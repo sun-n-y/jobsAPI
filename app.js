@@ -16,6 +16,7 @@ app.use(express.json());
 
 // routes
 app.use('/api/v1/auth', authRouter);
+//authenticated route, so users only have access to their info
 app.use('/api/v1/jobs', authenticateUser, jobsRouter);
 
 app.use(notFoundMiddleware);
