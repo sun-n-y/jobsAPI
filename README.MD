@@ -88,5 +88,8 @@
     - check to see if correct info is being sent to the controller
     - import model, create new doc on mongodb
     - now jobs will be tied to specific user
+  - get all jobs
+    - not all jobs, just user's jobs
+  -
 
 [Back to Top](#custom_anchor_name)
