@@ -90,6 +90,9 @@
     - now jobs will be tied to specific user
   - get all jobs
     - not all jobs, just user's jobs
-  -
+  - get single job
+    - check for both jobId and userId, otherwise id can be used to bring in other users info,
+    - with userID coming from token, it makes it secure
+- set dynamic token in thunder client, using test tab
 
 [Back to Top](#custom_anchor_name)
