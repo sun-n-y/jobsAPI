@@ -31,6 +31,9 @@ app.use(cors());
 app.use(xss());
 
 //routes
+app.get('/', (req, res) => {
+  res.send('<h1>jobs api</h1>');
+});
 app.use('/api/v1/auth', authRouter);
 //authenticated route, so users only have access to their info
 app.use('/api/v1/jobs', authenticateUser, jobsRouter);
