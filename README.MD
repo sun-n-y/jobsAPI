@@ -104,5 +104,22 @@
   - we don't need custom api error now
   - validation errors
   - Cast error
+- hosting on heroku
+  - how we can protect our api
+    - with help of npm packages and adding to middlewares
+    - helmet
+      - sets various http headers, preventing numerous possible attacks
+    - cors
+      - makes api accessible from different domain, if not then you will only be able to access api from same domain
+      - cross origin resource sharing
+      - a mechanism to allow or restrict requested resources on web server depending on where the http request was initiated
+      - by using this package we make our api accessible to the public
+    - xss-clean
+      - a library that sanitizes user inputs in req body, query, and params
+      - a result protects us from cross site scripting attacks, where the attacker tries to inject malicious code
+    - express rate limit
+      - limit the amount of request the user can make
+      - read their docs for more info
+      - if pushed to heroku, use app.set('trust proxy')
 
 [Back to Top](#custom_anchor_name)
