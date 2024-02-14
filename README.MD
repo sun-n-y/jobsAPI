@@ -94,7 +94,7 @@
     - check for both jobId and userId, otherwise id can be used to bring in other users info,
     - with userID coming from token, it makes it secure
   - update job
-    -
+  - delete job
 - set dynamic token in thunder client, using test tab
 
 [Back to Top](#custom_anchor_name)
