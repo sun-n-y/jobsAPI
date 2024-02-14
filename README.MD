@@ -104,7 +104,7 @@
   - we don't need custom api error now
   - validation errors
   - Cast error
-- hosting on heroku
+- hosting on heroku (render because its free)
   - how we can protect our api
     - with help of npm packages and adding to middlewares
     - helmet
@@ -121,5 +121,13 @@
       - limit the amount of request the user can make
       - read their docs for more info
       - if pushed to heroku, use app.set('trust proxy')
+- render
+  - easy to use
+  - push app to github then render will use it
+  - limits on free plan
+    - projects will be shutdown after 15 mins of inactivity
+    - which can cause delay of up to 30secs for that first request, for project to star up again
+    - 750 hours of run time per month, more projects you add the faster you get to that number
+    - bandwidth excess of 100gb is charged at .10/gb
 
 [Back to Top](#custom_anchor_name)
