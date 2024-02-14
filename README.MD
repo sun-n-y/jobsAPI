@@ -96,5 +96,13 @@
   - update job
   - delete job
 - set dynamic token in thunder client, using test tab
+- errors
+  - make errors catching more explicit
+  - if an error is one of the classes we created than we pass that through
+  - if not, we create a new custom error object and pass that through instead
+  - Object.keys = gives us array of keys
+  - we don't need custom api error now
+  - validation errors
+  - Cast error
 
 [Back to Top](#custom_anchor_name)
